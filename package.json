@@ -1,0 +1,11 @@
+{
+  "name": "ocpief",
+  "version": "1.0.0",
+  "description": "Open Cordova Project in Existing Folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "rido",
+  "license": "ASIS"
+}
