@@ -1,5 +1,8 @@
 Open Cordova Project in Existing Folder
 =======================================
 
-This tools will use a default JSPROJ, 
-and will create one by default in your current folder
+The purpose of this tool is to make it easier to Open any existing Cordova Project from a given folder from VS.
+
+VS allow you to do that from the UI, via File ->New -> Project From Existing Folder
+
+This tool will do almost the same, using the name of the folder as the name of the .jsproj file.
