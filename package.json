@@ -1,6 +1,6 @@
 {
   "name": "ocpief",
-  "version": "0.0.2-beta.3",
+  "version": "0.0.2-beta.4",
   "description": "Open Cordova Project in Existing Folder",
   "main": "index.js",
   "scripts": {
