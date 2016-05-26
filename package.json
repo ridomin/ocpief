@@ -1,6 +1,6 @@
 {
   "name": "ocpief",
-  "version": "0.0.2-beta.5",
+  "version": "0.0.2-beta.6",
   "description": "Open Cordova Project in Existing Folder",
   "main": "index.js",
   "scripts": {
@@ -9,11 +9,13 @@
   "bin": {
     "ocpief": "./bin/ocpief"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ridomin/ocpief.git"
   },
   "author": "rido",
-  "license": "ASIS"
+  "license": "ASIS",
+  "dependencies": {
+    "xmldom": "^0.1.22"
+  }
 }
