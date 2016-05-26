@@ -3,26 +3,31 @@ var fs = require('fs');
 var path = require('path');
 var DOMParser = require('xmldom').DOMParser;
 var XMLSerializer = require('xmldom').XMLSerializer;
-
+var ai = require('applicationinsights');
 
 console.log("OCPIEF 0.0.2-beta7")
 console.log("Create a Cordova Project in Existing folder \n\n")
 
+
+var client = ai.getClient("52df4438-1324-41d1-80ce-658c182f18b5");
+
 var projectFile = getFolderName() + '.jsproj';
+
+addWin10Preference();
 
 if (fs.existsSync(projectFile)){
     console.log("Project File found. " +projectFile);
     openProject(projectFile);
+    client.trackEvent("project opened")
 } else {
     console.log("Creating Default Cordova VS Project. " + projectFile)
-    initAndOpenCordovaProject(projectFile);    
+    initAndOpenCordovaProject(projectFile);
+    client.trackEvent("project created")    
 }
 
-addWin10Preference();
-
-
 function initAndOpenCordovaProject(projectFile){
-    fs.writeFile('taco.json', '{"cordova-cli":"6.2.0"}', function(err){if(err) throw err;});           
+    fs.writeFile('taco.json', '{"cordova-cli":"6.2.0"}', function(err){if(err) throw err;});       
+    console.log("***" + __dirname);    
     fs.createReadStream(path.resolve(__dirname,'JSPROJTEMPLATE.jsproj'))
             .pipe(fs.createWriteStream(projectFile)
                 .on('finish', function() {
@@ -35,9 +40,7 @@ function addWin10Preference(){
     
     fs.readFile('config.xml', 'utf8', function(err, data){
         var doc = new DOMParser().parseFromString(data);
-        var prefs = doc.getElementsByTagName("preference");
-        
-        console.log(prefs[0].attributes[0].value)
+        var prefs = doc.getElementsByTagName("preference");               
         var found = false;
         for (var p in prefs){
             var nameAttribute = prefs[p].attributes;
