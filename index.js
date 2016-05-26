@@ -5,7 +5,7 @@ var DOMParser = require('xmldom').DOMParser;
 var XMLSerializer = require('xmldom').XMLSerializer;
 var ai = require('applicationinsights');
 
-console.log("OCPIEF 0.0.2-beta9")
+console.log("OCPIEF 0.0.3-beta")
 console.log("Create a Cordova Project in Existing folder \n\n")
 
 
@@ -26,8 +26,7 @@ if (fs.existsSync(projectFile)){
 }
 
 function initAndOpenCordovaProject(projectFile){
-    fs.writeFile('taco.json', '{"cordova-cli":"6.2.0"}', function(err){if(err) throw err;});       
-    console.log("***" + __dirname);    
+    fs.writeFile('taco.json', '{"cordova-cli":"6.2.0"}', function(err){if(err) throw err;});               
     fs.createReadStream(path.resolve(__dirname,'JSPROJTEMPLATE.jsproj'))
             .pipe(fs.createWriteStream(projectFile)
                 .on('finish', function() {
