@@ -5,7 +5,7 @@ var DOMParser = require('xmldom').DOMParser;
 var XMLSerializer = require('xmldom').XMLSerializer;
 var ai = require('applicationinsights');
 
-console.log("OCPIEF 0.0.3-beta")
+console.log("OCPIEF 0.0.4-beta")
 console.log("Create a Cordova Project in Existing folder \n\n")
 
 
