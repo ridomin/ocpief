@@ -14,7 +14,7 @@ https://blogs.msdn.microsoft.com/rido/2016/05/10/ocpief/
 This tool will generate a Visual Studio project file, with the same name as the directory and jsproj extension.
 This project file is not supported and may be outdated, for production usage you must always use the wizard FILE->NEW PROJECT->FROM EXISTING FOLDER (see https://blogs.msdn.microsoft.com/rido/2016/05/10/ocpief )
 
-In the latest version [0.0.4-beta](https://github.com/ridomin/ocpief/releases/tag/0.0.4-beta) the project file has been modified with the next changes:
+In the latest version [0.0.5-beta](https://github.com/ridomin/ocpief/releases/tag/0.0.5-beta) the project file has been modified with the next changes:
 
 - block TypeScript compilation from MSBuild (in favor of gulp based workflows)
 - removed Windows targets that I never use
